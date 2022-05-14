@@ -1,5 +1,5 @@
 Cypress.Commands.add("LogIN",()=>{
-        cy.visit('https://assist-devqa.netlify.app')
+        
         cy.get('.btn-nav').contains('Log In').click()
         cy.get('.btn-login').contains('Login with your existing account').click()
         cy.get('input[name="email"]').type('user10@test.com')
