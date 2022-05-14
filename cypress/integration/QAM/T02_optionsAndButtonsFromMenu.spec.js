@@ -1,11 +1,12 @@
-describe("Login" , function(){
-    it('login',function(){
+describe("OptionsAndButtonsFromMenu" , function(){
+    it("OptionsAndButtonsFromMenu",function(){
         cy.visit('https://assist-devqa.netlify.app')
-        cy.get('.btn-nav').contains('Log In').click()
-        cy.get('.btn-login').contains('Login with your existing account').click()
-        cy.get('input[name="email"]').type('user10@test.com')
-        cy.get('input[name="password"]').type('user123456')
-        cy.get('.submit-btn').contains('Log In as a member').click()
-        
+
+        cy.get('.nav-panel').find('a').first().should('have.text','Home')
+        cy.get('.nav-panel').find('a').eq(1).should('have.text','BIM 2021')
+        cy.get('.nav-panel').find('a').eq(2).should('have.text','Regulations')
+        cy.get('.nav-panel').find('a').eq(3).should('have.text','History')
+        cy.get('.more-action').find('.btn-nav').eq(0).should('have.text','Log In')
+        cy.get('.more-action').find('.btn-nav').eq(1).should('have.text','Apply Now')
     })
 })
